@@ -6,6 +6,7 @@ import "./globals.css";
 import Navbar from "@/components/Shared/Navbar/navbar";
 import { ThemeProvider } from "@mui/material";
 import theme from "@/lib/theme/theme";
+import Footer from "@/components/Shared/Footer/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,6 +26,7 @@ export default function RootLayout({
         <ThemeProvider theme={theme}>
           <Navbar />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

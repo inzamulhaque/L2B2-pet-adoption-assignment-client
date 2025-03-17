@@ -1,3 +1,4 @@
+import Action from "@/components/Home/Action";
 import HeroSection from "@/components/Home/HeroSection";
 import MeetPet from "@/components/Home/MeetPet";
 import Stories from "@/components/Home/Stories";
@@ -10,6 +11,7 @@ export default function Home() {
       <MeetPet />
       <Works />
       <Stories />
+      <Action />
     </>
   );
 }
