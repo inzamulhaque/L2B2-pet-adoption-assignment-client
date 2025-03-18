@@ -1,26 +1,43 @@
 import {
   Box,
-  Button,
   Container,
   Divider,
   Grid,
+  IconButton,
   Typography,
+  Button,
 } from "@mui/material";
 import {
   Pets as PetsIcon,
-  Home as HomeIcon,
-  Info as InfoIcon,
   Phone as PhoneIcon,
+  Email as EmailIcon,
+  LocationOn as LocationIcon,
+  Facebook as FacebookIcon,
+  Twitter as TwitterIcon,
+  Instagram as InstagramIcon,
+  YouTube as YouTubeIcon,
 } from "@mui/icons-material";
-import React from "react";
+import Link from "next/link";
+import React, { useState } from "react";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <>
-      <Box sx={{ bgcolor: "background.paper", py: 6 }}>
-        <Container>
-          <Grid container spacing={4}>
-            <Grid item xs={12} md={4}>
+      <Box
+        sx={{
+          bgcolor: "#f8f9fa",
+          py: 8,
+          borderTop: "1px solid",
+          borderColor: "divider",
+          mt: 6,
+        }}
+      >
+        <Container fixed>
+          <Grid container spacing={6}>
+            {/* Logo and Description */}
+            <Grid item xs={3}>
               <Box sx={{ display: "flex", alignItems: "center", mb: 2 }}>
                 <PetsIcon sx={{ mr: 1, color: "primary.main" }} />
                 <Typography
@@ -31,98 +48,208 @@ const Footer = () => {
                   PawsForever
                 </Typography>
               </Box>
-              <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                sx={{ mb: 3, lineHeight: 1.7 }}
+              >
                 Our mission is to find loving homes for all animals in need and
                 to promote responsible pet ownership.
               </Typography>
               <Box sx={{ display: "flex", gap: 1 }}>
-                {/* Social Media Icons would go here */}
+                <IconButton
+                  color="primary"
+                  aria-label="Facebook"
+                  size="small"
+                  sx={{
+                    bgcolor: "rgba(106, 90, 205, 0.1)",
+                    "&:hover": { bgcolor: "rgba(106, 90, 205, 0.2)" },
+                  }}
+                >
+                  <FacebookIcon fontSize="small" />
+                </IconButton>
+                <IconButton
+                  color="primary"
+                  aria-label="Twitter"
+                  size="small"
+                  sx={{
+                    bgcolor: "rgba(106, 90, 205, 0.1)",
+                    "&:hover": { bgcolor: "rgba(106, 90, 205, 0.2)" },
+                  }}
+                >
+                  <TwitterIcon fontSize="small" />
+                </IconButton>
+                <IconButton
+                  color="primary"
+                  aria-label="Instagram"
+                  size="small"
+                  sx={{
+                    bgcolor: "rgba(106, 90, 205, 0.1)",
+                    "&:hover": { bgcolor: "rgba(106, 90, 205, 0.2)" },
+                  }}
+                >
+                  <InstagramIcon fontSize="small" />
+                </IconButton>
+                <IconButton
+                  color="primary"
+                  aria-label="YouTube"
+                  size="small"
+                  sx={{
+                    bgcolor: "rgba(106, 90, 205, 0.1)",
+                    "&:hover": { bgcolor: "rgba(106, 90, 205, 0.2)" },
+                  }}
+                >
+                  <YouTubeIcon fontSize="small" />
+                </IconButton>
               </Box>
             </Grid>
-            <Grid item xs={12} sm={6} md={2}>
+
+            {/* Quick Links */}
+            <Grid item xs={3}>
               <Typography variant="subtitle1" sx={{ fontWeight: 600, mb: 2 }}>
                 Quick Links
               </Typography>
-              <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-                <Button
-                  color="inherit"
-                  sx={{ justifyContent: "center", p: 0, py: 0.5 }}
+              <Box sx={{ display: "flex", flexDirection: "column", gap: 1.5 }}>
+                <Typography
+                  component={Link}
+                  href="/"
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{
+                    textDecoration: "none",
+                    "&:hover": { color: "primary.main" },
+                  }}
                 >
                   Home
-                </Button>
-                <Button
-                  color="inherit"
-                  sx={{ justifyContent: "center", p: 0, py: 0.5 }}
+                </Typography>
+                <Typography
+                  component={Link}
+                  href="/adopt"
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{
+                    textDecoration: "none",
+                    "&:hover": { color: "primary.main" },
+                  }}
                 >
                   Adopt
-                </Button>
-                <Button
-                  color="inherit"
-                  sx={{ justifyContent: "center", p: 0, py: 0.5 }}
+                </Typography>
+                <Typography
+                  component={Link}
+                  href="/donate"
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{
+                    textDecoration: "none",
+                    "&:hover": { color: "primary.main" },
+                  }}
                 >
                   Donate
-                </Button>
-                <Button
-                  color="inherit"
-                  sx={{ justifyContent: "center", p: 0, py: 0.5 }}
+                </Typography>
+                <Typography
+                  component={Link}
+                  href="/volunteer"
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{
+                    textDecoration: "none",
+                    "&:hover": { color: "primary.main" },
+                  }}
                 >
                   Volunteer
-                </Button>
+                </Typography>
               </Box>
             </Grid>
-            <Grid item xs={12} sm={6} md={2}>
+
+            {/* About */}
+            <Grid item xs={3}>
               <Typography variant="subtitle1" sx={{ fontWeight: 600, mb: 2 }}>
                 About
               </Typography>
-              <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-                <Button
-                  color="inherit"
-                  sx={{ justifyContent: "center", p: 0, py: 0.5 }}
+              <Box sx={{ display: "flex", flexDirection: "column", gap: 1.5 }}>
+                <Typography
+                  component={Link}
+                  href="/about"
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{
+                    textDecoration: "none",
+                    "&:hover": { color: "primary.main" },
+                  }}
                 >
                   Our Story
-                </Button>
-                <Button
-                  color="inherit"
-                  sx={{ justifyContent: "center", p: 0, py: 0.5 }}
+                </Typography>
+                <Typography
+                  component={Link}
+                  href="/about#team"
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{
+                    textDecoration: "none",
+                    "&:hover": { color: "primary.main" },
+                  }}
                 >
                   Team
-                </Button>
-                <Button
-                  color="inherit"
-                  sx={{ justifyContent: "center", p: 0, py: 0.5 }}
+                </Typography>
+                <Typography
+                  component={Link}
+                  href="/testimonials"
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{
+                    textDecoration: "none",
+                    "&:hover": { color: "primary.main" },
+                  }}
                 >
                   Testimonials
-                </Button>
-                <Button
-                  color="inherit"
-                  sx={{ justifyContent: "center", p: 0, py: 0.5 }}
+                </Typography>
+                <Typography
+                  component={Link}
+                  href="/faq"
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{
+                    textDecoration: "none",
+                    "&:hover": { color: "primary.main" },
+                  }}
                 >
                   FAQ
-                </Button>
+                </Typography>
               </Box>
             </Grid>
-            <Grid item xs={12} md={4}>
+
+            {/* Contact */}
+            <Grid item xs={3}>
               <Typography variant="subtitle1" sx={{ fontWeight: 600, mb: 2 }}>
                 Contact Us
               </Typography>
               <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
                 <Box sx={{ display: "flex", alignItems: "center" }}>
                   <PhoneIcon
-                    sx={{ mr: 1, color: "primary.main", fontSize: 20 }}
+                    sx={{ mr: 1.5, color: "primary.main", fontSize: 18 }}
                   />
-                  <Typography variant="body2">(123) 456-7890</Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    (123) 456-7890
+                  </Typography>
                 </Box>
                 <Box sx={{ display: "flex", alignItems: "center" }}>
-                  <InfoIcon
-                    sx={{ mr: 1, color: "primary.main", fontSize: 20 }}
+                  <EmailIcon
+                    sx={{ mr: 1.5, color: "primary.main", fontSize: 18 }}
                   />
-                  <Typography variant="body2">info@pawsforever.com</Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    info@pawsforever.com
+                  </Typography>
                 </Box>
                 <Box sx={{ display: "flex", alignItems: "flex-start" }}>
-                  <HomeIcon
-                    sx={{ mr: 1, color: "primary.main", fontSize: 20, mt: 0.5 }}
+                  <LocationIcon
+                    sx={{
+                      mr: 1.5,
+                      color: "primary.main",
+                      fontSize: 18,
+                      mt: 0.3,
+                    }}
                   />
-                  <Typography variant="body2">
+                  <Typography variant="body2" color="text.secondary">
                     123 Adoption Street
                     <br />
                     Pet City, PC 12345
@@ -131,10 +258,46 @@ const Footer = () => {
               </Box>
             </Grid>
           </Grid>
+
           <Divider sx={{ my: 4 }} />
-          <Typography variant="body2" color="text.secondary" align="center">
-            © {new Date().getFullYear()} PawsForever. All rights reserved.
-          </Typography>
+
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <Typography variant="body2" color="text.secondary">
+              © {currentYear} PawsForever. All rights reserved.
+            </Typography>
+            <Box sx={{ display: "flex", gap: 3 }}>
+              <Typography
+                component={Link}
+                href="/privacy"
+                variant="body2"
+                color="text.secondary"
+                sx={{
+                  textDecoration: "none",
+                  "&:hover": { color: "primary.main" },
+                }}
+              >
+                Privacy Policy
+              </Typography>
+              <Typography
+                component={Link}
+                href="/terms"
+                variant="body2"
+                color="text.secondary"
+                sx={{
+                  textDecoration: "none",
+                  "&:hover": { color: "primary.main" },
+                }}
+              >
+                Terms of Service
+              </Typography>
+            </Box>
+          </Box>
         </Container>
       </Box>
     </>
