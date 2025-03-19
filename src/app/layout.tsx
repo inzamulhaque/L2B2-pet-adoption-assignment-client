@@ -21,14 +21,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>
+      <html lang="en">
+        <body className={inter.className}>
           <Navbar />
           {children}
           <Footer />
-        </ThemeProvider>
-      </body>
-    </html>
+        </body>
+      </html>
+    </ThemeProvider>
   );
 }
