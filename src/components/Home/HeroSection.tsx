@@ -1,23 +1,15 @@
 "use client";
 
-import {
-  Box,
-  Button,
-  Container,
-  Grid,
-  Typography,
-  useTheme,
-} from "@mui/material";
+import { Box, Button, Container, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import heroImage from "../../assets/landing_page/hero_kitten.jpg";
 
 const HeroSection = () => {
-  const theme = useTheme();
   return (
     <>
-      <Box bgcolor={"#eff2f7"} mt={0}>
+      <Box bgcolor={"#eff2f7"} mt={2}>
         <Container>
           <Grid container spacing={3} height={"83vh"} alignItems={"center"}>
             <Grid item xs={12} md={6}>
